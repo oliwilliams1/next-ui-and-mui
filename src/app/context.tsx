@@ -17,7 +17,12 @@ function createShader(gl: WebGLRenderingContext, type: number, source: string): 
   return null;
 }
 
-export default function Context() 
+interface ContextProps {
+  width: string;
+  height: string;
+}
+
+export default function Context({ width, height } : ContextProps)
 {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -105,7 +110,7 @@ export default function Context()
 
   return (
     <div className="display:block">
-      <canvas ref={canvasRef} width={800} height={600} />
+      <canvas ref={canvasRef} width={width} height={height} />
     </div>
   )
 }
