@@ -4,6 +4,6 @@ import Context from "./context";
 export default function Home() 
 {
   return (
-    <Context width="1200" height="800"/>
+    <Context width="800" height="600"/>
   )
 }

@@ -72,7 +72,7 @@ export default function Context({ width, height } : ContextProps) {
 
                 gl.enableVertexAttribArray(aTexCoordLocation);
                 gl.vertexAttribPointer(aTexCoordLocation, 2, gl.FLOAT, false, 16, 8);
-                gl.uniform1f(aAspectRatioLocation, 1.333);
+                gl.uniform1f(aAspectRatioLocation, canvas.width / canvas.height);
 
                 // Render the UV grid
                 gl.clearColor(0.0, 0.0, 0.0, 1.0);
