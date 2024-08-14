@@ -2,6 +2,8 @@ precision highp float;
 
 varying vec2 vTexCoord;
 uniform float uAspectRatio;
+uniform vec2 p1;
+uniform vec2 p2;
 
 vec4 b = vec4(0.1, 0.1, 1.0, 1.0);
 
@@ -24,7 +26,7 @@ void main() {
     float rad = 1.0;
     vec2 aspect = vec2(1.0, 1.0 / uAspectRatio);
     vec2 coord = (vTexCoord * 2.0 - 1.0) * aspect;
-    float rc = circleContrib(coord, vec2(-0.3, 0.3), rad);
-    float bc = circleContrib(coord, vec2(0.3, -0.3), rad);
+    float rc = circleContrib(coord, p1, rad);
+    float bc = circleContrib(coord, p2, rad);
     gl_FragColor = vec4(rc, 0.0, bc, 1.0);
 }

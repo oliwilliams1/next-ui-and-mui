@@ -38,8 +38,8 @@ if __name__ == "__main__":
         c1tmv = c1 - mousePos
         c2tmv = c2 - mousePos
 
-        c1 = c1 - c1tmv * min(0.05 / distance(c1, mousePos) ** 2, 1)
-        c2 = c2 - c2tmv * min(0.05 / distance(c2, mousePos) ** 2, 1)
+        c1 = c1 - c1tmv * min(0.05 / distance(c1, mousePos) ** 2, 0.2)
+        c2 = c2 - c2tmv * min(0.05 / distance(c2, mousePos) ** 2, 0.2)
 
         screen.fill((0, 0, 0))
         pg.draw.circle(screen, (255, 255, 255), ndcToScreen(c1), 90)
